@@ -3,12 +3,14 @@ package com.test.swensonhetask.main.repo
 import androidx.lifecycle.LiveData
 import com.test.swensonhetask.appmanger.network.NetworkState
 import com.test.swensonhetask.appmanger.network.netWorkError
+import com.test.swensonhetask.main.datasource.CurrenciesRemoteDataSource
 import com.test.swensonhetask.main.datasource.ICurrenciesDataSource
 import com.test.swensonhetask.main.models.CurrenciesResponse
 import com.test.swensonhetask.utils.SingleLiveEvent
 import io.reactivex.Flowable
+import javax.inject.Inject
 
-class CurrenciesRepo(private val currenciesDataSource: ICurrenciesDataSource) :
+class CurrenciesRepo @Inject constructor(private val currenciesDataSource: CurrenciesRemoteDataSource) :
     ICurrenciesDataSource {
 
     private val networkState: SingleLiveEvent<NetworkState> = SingleLiveEvent()

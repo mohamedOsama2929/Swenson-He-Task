@@ -16,7 +16,9 @@ import com.test.swensonhetask.main.models.CurrenciesResponse
 import com.test.swensonhetask.main.models.CurrencyModel
 import com.test.swensonhetask.main.viewmodel.CurrenciesVM
 import com.test.swensonhetask.result.ResultActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CurrenciesActivity : AppCompatActivity(),
     CurrenciesRecycleViewAdapter.OnItemClickListenerCurrency {
     lateinit var binding: ActivityMainBinding

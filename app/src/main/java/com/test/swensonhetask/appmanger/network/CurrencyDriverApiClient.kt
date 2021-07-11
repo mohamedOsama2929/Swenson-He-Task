@@ -14,6 +14,7 @@ object CurrencyDriverApiClient {
 
     init {
         val loggingInterceptor = HttpLoggingInterceptor()
+
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
 

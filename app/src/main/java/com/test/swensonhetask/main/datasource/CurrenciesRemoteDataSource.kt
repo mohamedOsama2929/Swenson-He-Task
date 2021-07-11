@@ -1,13 +1,16 @@
 package com.test.swensonhetask.main.datasource
 
-import com.test.swensonhetask.appmanger.network.CurrencyDriverApiClient
+import com.test.swensonhetask.appmanger.network.CurrencyApiService
 import com.test.swensonhetask.main.models.CurrenciesResponse
 import io.reactivex.Flowable
+import javax.inject.Inject
 
 
-object CurrenciesRemoteDataSource : ICurrenciesDataSource {
+class CurrenciesRemoteDataSource @Inject constructor(val currencyApiService: CurrencyApiService) :
+    ICurrenciesDataSource {
+
 
     override fun getCurrencies(key: String): Flowable<CurrenciesResponse> {
-        return CurrencyDriverApiClient.getCurrencyApisService().getCurrencies(key)
+        return currencyApiService.getCurrencies(key)
     }
 }
